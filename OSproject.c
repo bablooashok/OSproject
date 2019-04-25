@@ -17,15 +17,15 @@ void main() {
 	int n = sem_init(&sem,0,1);
 	pthread_create (&t1, NULL, f1, NULL);
 	pthread_create (&t2, NULL, f2, NULL);
-    pthread_join(t1, NULL);
-    pthread_join(t2, NULL);
+   	pthread_join(t1, NULL);
+   	pthread_join(t2, NULL);
 }
 
 void *f1() {
 	printf("Thread 1 is created\n");
 	sleep(1);
 	printf("Calling fb()\n");
-    fb();
+    	fb();
 }
 
 void *f2() {
@@ -73,7 +73,6 @@ void *f2();
 sem_t sem;
 void main() {
 	int n = sem_init(&sem,1,1);
-    //printf("%d", n);
 	pthread_create (&t1, NULL, f1, NULL);
     pthread_join(t1, NULL);
     
@@ -85,29 +84,23 @@ void *f1() {
     pthread_join(t2, NULL);
     
     P();
-    //printf("%d", sem);
 	printf("Calling fc()\n");
     fb();
     V();
-    //printf("%d\n", sem);
 }
 
 void *f2() {
 	printf("Thread 2 is created\n");
 	
 	P();
-	//printf("%d", sem);
 	printf("Calling fa()\n");
 	fa();
 	V();
-	//printf("%d\n", sem);
 	
 	P();
-	//printf("%d", sem);
 	printf("Calling fb()\n");
 	fc();
 	V();
-	//printf("%d\n", sem);
 }
 
 void fa() {
