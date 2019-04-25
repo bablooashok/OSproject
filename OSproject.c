@@ -53,7 +53,7 @@ void fc() {
 
 
 
-/*  
+/*  As the below code was not working, I have implemented the above code.
 
 
 #include <stdio.h>
